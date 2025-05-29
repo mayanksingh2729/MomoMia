@@ -1,0 +1,258 @@
+
+		<div class="attachment-preview js--select-attachment type-{{ data.type }} subtype-{{ data.subtype }} {{ data.orientation }}">
+			<div class="thumbnail">
+				<# if ( data.uploading ) { #>
+					<div class="media-progress-bar"><div style="width: {{ data.percent }}%"></div></div>
+				<# } else if ( 'image' === data.type && data.size && data.size.url ) { #>
+					<div class="centered">
+						<img src="{{ data.size.url }}" draggable="false" alt="" />
+					</div>
+				<# } else { #>
+					<div class="centered">
+						<# if ( data.image && data.image.src && data.image.src !== data.icon ) { #>
+							<img src="{{ data.image.src }}" class="thumbnail" draggable="false" alt="" />
+						<# } else if ( data.sizes && data.sizes.medium ) { #>
+							<img src="{{ data.sizes.medium.url }}" class="thumbnail" draggable="false" alt="" />
+						<# } else { #>
+							<img src="{{ data.icon }}" class="icon" draggable="false" alt="" />
+						<# } #>
+					</div>
+					<div class="filename">
+						<div>{{ data.filename }}</div>
+					</div>
+				<# } #>
+
+
+			</div>
+			<# if ( data.buttons.close ) { #>
+				<button type="button" class="button-link attachment-close media-modal-icon"><span class="screen-reader-text">
+					Remove				</span></button>
+			<# } #>
+		</div>
+		<# if ( data.buttons.check ) { #>
+			<button type="button" class="check" tabindex="-1"><span class="media-modal-icon"></span><span class="screen-reader-text">
+				Deselect			</span></button>
+		<# } #>
+		<#
+		var maybeReadOnly = data.can.save || data.allowLocalEdits ? '' : 'readonly';
+		if ( data.describe ) {
+			if ( 'image' === data.type ) { #>
+				<input type="text" value="{{ data.caption }}" class="describe" data-setting="caption"
+					aria-label="Caption"
+					placeholder="Caption&hellip;" {{ maybeReadOnly }} />
+			<# } else { #>
+				<input type="text" value="{{ data.title }}" class="describe" data-setting="title"
+					<# if ( 'video' === data.type ) { #>
+						aria-label="Video title"
+						placeholder="Video title&hellip;"
+					<# } else if ( 'audio' === data.type ) { #>
+						aria-label="Audio title"
+						placeholder="Audio title&hellip;"
+					<# } else { #>
+						aria-label="Media title"
+						placeholder="Media title&hellip;"
+					<# } #> {{ maybeReadOnly }} />
+			<# }
+		} #>
+	
+ 
+			#adminmenu li.menu-icon-robo_gallery_table img,
+	        #adminmenu li[class*=menu-icon-robo_gallery_table] img,
+			#adminmenu li[class*=menu-icon-robo_gallery_table] img {
+			    opacity: 1;
+			    max-width: 25px;
+			    padding-top: 5px;
+			}
+			
+			#menu-posts-robo_gallery_table ul.wp-submenu li:nth-child(5) a,
+			#adminmenu li.menu-icon-robo_gallery_table ul li:nth-child(5) a{
+				font-weight: bold;
+				color: #3adb76;
+			}
+			<div class="media-frame-title" id="media-frame-title"></div>
+			<h2 class="media-frame-menu-heading">Actions</h2>
+			<button type="button" class="button button-link media-frame-menu-toggle" aria-expanded="false">
+				Menu			<span class="dashicons dashicons-arrow-down" aria-hidden="true"></span>
+			</button>
+			<div class="media-frame-menu"></div>
+			<div class="media-frame-tab-panel">
+				<div class="media-frame-router"></div>
+				<div class="media-frame-content"></div>
+			</div>
+			<h2 class="media-frame-actions-heading screen-reader-text">
+			Selected media actions		</h2>
+			<div class="media-frame-toolbar"></div>
+			<div class="media-frame-uploader"></div>
+		
+
+			
+		<div class="attachment-preview js--select-attachment type-{{ data.type }} subtype-{{ data.subtype }} {{ data.orientation }}">
+			<div class="thumbnail">
+				<# if ( data.uploading ) { #>
+					<div class="media-progress-bar"><div style="width: {{ data.percent }}%"></div></div>
+				<# } else if ( 'image' === data.type && data.size && data.size.url ) { #>
+					<div class="centered">
+						<img src="{{ data.size.url }}" draggable="false" alt="" />
+					</div>
+				<# } else { #>
+					<div class="centered">
+						<# if ( data.image && data.image.src && data.image.src !== data.icon ) { #>
+							<img src="{{ data.image.src }}" class="thumbnail" draggable="false" alt="" />
+						<# } else if ( data.sizes && data.sizes.medium ) { #>
+							<img src="{{ data.sizes.medium.url }}" class="thumbnail" draggable="false" alt="" />
+						<# } else { #>
+							<img src="{{ data.icon }}" class="icon" draggable="false" alt="" />
+						<# } #>
+					</div>
+					<div class="filename">
+						<div>{{ data.filename }}</div>
+					</div>
+				<# } #>
+
+
+			</div>
+			<# if ( data.buttons.close ) { #>
+				<button type="button" class="button-link attachment-close media-modal-icon"><span class="screen-reader-text">
+					Remove				</span></button>
+			<# } #>
+		</div>
+		<# if ( data.buttons.check ) { #>
+			<button type="button" class="check" tabindex="-1"><span class="media-modal-icon"></span><span class="screen-reader-text">
+				Deselect			</span></button>
+		<# } #>
+		<#
+		var maybeReadOnly = data.can.save || data.allowLocalEdits ? '' : 'readonly';
+		if ( data.describe ) {
+			if ( 'image' === data.type ) { #>
+				<input type="text" value="{{ data.caption }}" class="describe" data-setting="caption"
+					aria-label="Caption"
+					placeholder="Caption&hellip;" {{ maybeReadOnly }} />
+			<# } else { #>
+				<input type="text" value="{{ data.title }}" class="describe" data-setting="title"
+					<# if ( 'video' === data.type ) { #>
+						aria-label="Video title"
+						placeholder="Video title&hellip;"
+					<# } else if ( 'audio' === data.type ) { #>
+						aria-label="Audio title"
+						placeholder="Audio title&hellip;"
+					<# } else { #>
+						aria-label="Media title"
+						placeholder="Media title&hellip;"
+					<# } #> {{ maybeReadOnly }} />
+			<# }
+		} #>
+	
+ 
+			#adminmenu li.menu-icon-robo_gallery_table img,
+	        #adminmenu li[class*=menu-icon-robo_gallery_table] img,
+			#adminmenu li[class*=menu-icon-robo_gallery_table] img {
+			    opacity: 1;
+			    max-width: 25px;
+			    padding-top: 5px;
+			}
+			
+			#menu-posts-robo_gallery_table ul.wp-submenu li:nth-child(5) a,
+			#adminmenu li.menu-icon-robo_gallery_table ul li:nth-child(5) a{
+				font-weight: bold;
+				color: #3adb76;
+			}
+			<div class="media-frame-title" id="media-frame-title"></div>
+			<h2 class="media-frame-menu-heading">Actions</h2>
+			<button type="button" class="button button-link media-frame-menu-toggle" aria-expanded="false">
+				Menu			<span class="dashicons dashicons-arrow-down" aria-hidden="true"></span>
+			</button>
+			<div class="media-frame-menu"></div>
+			<div class="media-frame-tab-panel">
+				<div class="media-frame-router"></div>
+				<div class="media-frame-content"></div>
+			</div>
+			<h2 class="media-frame-actions-heading screen-reader-text">
+			Selected media actions		</h2>
+			<div class="media-frame-toolbar"></div>
+			<div class="media-frame-uploader"></div>
+		
+
+			
+			// Used by Gallery Custom Links to handle tenacious Lightboxes
+			//jQuery(document).ready(function () {
+
+				function mgclInit() {
+					
+					// In jQuery:
+					// if (jQuery.fn.off) {
+					// 	jQuery('.no-lightbox, .no-lightbox img').off('click'); // jQuery 1.7+
+					// }
+					// else {
+					// 	jQuery('.no-lightbox, .no-lightbox img').unbind('click'); // < jQuery 1.7
+					// }
+
+					// 2022/10/24: In Vanilla JS
+					var elements = document.querySelectorAll('.no-lightbox, .no-lightbox img');
+					for (var i = 0; i < elements.length; i++) {
+						 elements[i].onclick = null;
+					}
+
+
+					// In jQuery:
+					//jQuery('a.no-lightbox').click(mgclOnClick);
+
+					// 2022/10/24: In Vanilla JS:
+					var elements = document.querySelectorAll('a.no-lightbox');
+					for (var i = 0; i < elements.length; i++) {
+						 elements[i].onclick = mgclOnClick;
+					}
+
+					// in jQuery:
+					// if (jQuery.fn.off) {
+					// 	jQuery('a.set-target').off('click'); // jQuery 1.7+
+					// }
+					// else {
+					// 	jQuery('a.set-target').unbind('click'); // < jQuery 1.7
+					// }
+					// jQuery('a.set-target').click(mgclOnClick);
+
+					// 2022/10/24: In Vanilla JS:
+					var elements = document.querySelectorAll('a.set-target');
+					for (var i = 0; i < elements.length; i++) {
+						 elements[i].onclick = mgclOnClick;
+					}
+				}
+
+				function mgclOnClick() {
+					if (!this.target || this.target == '' || this.target == '_self')
+						window.location = this.href;
+					else
+						window.open(this.href,this.target);
+					return false;
+				}
+
+				// From WP Gallery Custom Links
+				// Reduce the number of  conflicting lightboxes
+				function mgclAddLoadEvent(func) {
+					var oldOnload = window.onload;
+					if (typeof window.onload != 'function') {
+						window.onload = func;
+					} else {
+						window.onload = function() {
+							oldOnload();
+							func();
+						}
+					}
+				}
+
+				mgclAddLoadEvent(mgclInit);
+				mgclInit();
+
+			//});
+		
+
+			
+		<div tabindex="0" class="media-modal wp-core-ui" role="dialog" aria-labelledby="media-frame-title">
+			<# if ( data.hasCloseButton ) { #>
+				<button type="button" class="media-modal-close"><span class="media-modal-icon"><span class="screen-reader-text">
+					Close dialog				</span></span></button>
+			<# } #>
+			<div class="media-modal-content" role="document"></div>
+		</div>
+		<div class="media-modal-backdrop"></div>
+	
